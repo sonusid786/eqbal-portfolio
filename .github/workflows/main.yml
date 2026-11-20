@@ -1,5 +1,4 @@
 
-
 name: Deploy Portfolio to AWS S3
 
 on:
@@ -26,4 +25,6 @@ jobs:
         run: aws sts get-caller-identity
 
       - name: Deploy Static Website to S3
-        run: aws s3 sync ./project/eqbal-portfolio/ s3://github-eqbal/
+        run: |
+          aws s3 sync ./ s3://github-eqbal/
+
